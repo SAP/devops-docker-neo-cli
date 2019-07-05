@@ -20,12 +20,17 @@ docker build -t localhost:5000/ppiper/neo-cli .
 docker tag localhost:5000/ppiper/neo-cli ppiper/neo-cli:latest
 docker push localhost:5000/ppiper/neo-cli:latest
 
-git clone -b validate-neo-cli https://github.com/piper-validation/cloud-s4-sdk-book
-cd cloud-s4-sdk-book
+git clone https://github.com/piper-validation/cloud-s4-sdk-book -b validate-neo-cli test-project
+pushd test-project
 
 docker run -v //var/run/docker.sock:/var/run/docker.sock -v $(pwd):/workspace -v /tmp\
   -e CX_INFRA_IT_CF_PASSWORD -e CX_INFRA_IT_CF_USERNAME -e BRANCH_NAME=master \
   -e CASC_JENKINS_CONFIG=/workspace/jenkins.yml -e HOST=$(hostname) \
   ppiper/jenkinsfile-runner
 
-rm -rf cloud-s4-sdk-book
+popd
+
+function cleanup {
+  rm -rf test-project
+}
+trap cleanup EXIT
