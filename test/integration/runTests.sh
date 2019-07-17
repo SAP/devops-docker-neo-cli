@@ -16,8 +16,10 @@ set -x
 # Start a local registry, to which we push the images built in this test, and from which they will be consumed in the test
 docker run -d -p 5000:5000 --restart always --name registry registry:2 || true
 
-docker build -t localhost:5000/ppiper/neo-cli .
-docker tag localhost:5000/ppiper/neo-cli ppiper/neo-cli:latest
+docker build \
+  -t localhost:5000/ppiper/neo-cli \
+  -t ppiper/neo-cli:latest \
+  "$(pwd)/../.."
 docker push localhost:5000/ppiper/neo-cli:latest
 
 git clone https://github.com/piper-validation/cloud-s4-sdk-book -b validate-neo-cli test-project
