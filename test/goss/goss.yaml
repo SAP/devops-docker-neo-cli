@@ -1,0 +1,8 @@
+# GOSS Manual: https://github.com/aelsabbahy/goss/blob/master/docs/manual.md
+# CMD: GOSS_FILES_PATH=/project/test/goss dgoss run --interactive --volume $PWD:/project ppiper/neo-cli
+command:
+  mvn --version:
+    exit-status: 0
+    stdout:
+    - Apache Maven 3.5.4
+    timeout: 10000
