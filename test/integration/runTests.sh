@@ -22,7 +22,7 @@ docker build \
   "$(pwd)/../.."
 docker push localhost:5000/ppiper/neo-cli:latest
 
-git clone https://github.com/piper-validation/cloud-s4-sdk-book -b validate-neo-cli test-project
+git clone https://github.com/piper-validation/cloud-s4-sdk-book -b validate-neo-cli-temp test-project
 pushd test-project
 
 docker run \
