@@ -43,3 +43,4 @@ function cleanup {
   docker rm --force registry
 }
 trap cleanup EXIT
+
