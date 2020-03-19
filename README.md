@@ -72,3 +72,4 @@ This image contains the [SAP Cloud Platform Tools for Neo](https://mvnrepository
 These tools are licensed under the [SAP DEVELOPER LICENSE AGREEMENT](https://tools.hana.ondemand.com/developer-license-3_1.txt).
 This License file is also included in the `/sdk` folder in the Docker image.
 For any usage of built Docker images please make sure to check the licenses of the artifacts contained in the images.
+
