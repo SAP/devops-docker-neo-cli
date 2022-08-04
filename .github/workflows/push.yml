@@ -1,0 +1,21 @@
+name: Build images and push (on master branch or on schedule)
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron:  '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run CI
+      run: |
+        echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
+        docker build -t ppiper/neo-cli:latest .
+        docker tag ppiper/neo-cli:latest
+        docker push ppiper/neo-cli:latest
