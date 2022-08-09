@@ -34,3 +34,4 @@ jobs:
           piper-version: latest
           command: githubPublishRelease
           flags: --token ${{ secrets.GITHUB_TOKEN }}
+          
