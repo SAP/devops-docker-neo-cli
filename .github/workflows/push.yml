@@ -20,4 +20,4 @@ jobs:
         docker build -t ppiper/neo-cli:latest .
         docker tag ppiper/neo-cli:latest ghcr.io/sap/ppiper-neo-cli:latest
         docker push ppiper/neo-cli:latest
-        docker push ghcr.io/sap/ppiper-cf-cli:latest
+        docker push ghcr.io/sap/ppiper-neo-cli:latest
