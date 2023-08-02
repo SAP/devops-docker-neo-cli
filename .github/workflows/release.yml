@@ -23,7 +23,7 @@ jobs:
             exit 1
           fi
           echo "PIPER_version=$NEXT_VERSION" >> $GITHUB_ENV
-      - name: Build, test and push
+      - name: Build and push
         run: |
           echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
           echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ secrets.CR_USER }} --password-stdin
