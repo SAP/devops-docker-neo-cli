@@ -41,27 +41,6 @@ For using the `neo.sh` tool via this image, it can be invoked like in this comma
 docker run ppiper/neo-cli neo.sh help
 ```
 
-## Testing
-
-### Running as a Service
-
-See `.travis.yml` file for configuration.
-
-Configure the following variables (secrets)
-
-* `CX_INFRA_IT_CF_USERNAME` (user name for deployment to SAP Cloud Platform)
-* `CX_INFRA_IT_CF_PASSWORD` (password for deployment to SAP Cloud Platform)
-
-### Running locally
-
-Docker is required, and at least 4 GB of memory assigned to Docker.
-
-```bash
-export CX_INFRA_IT_CF_USERNAME="myusername"
-export CX_INFRA_IT_CF_PASSWORD="mypassword"
-./runTests.sh
-```
-
 ## Licensing
 
 Copyright 2017-2021 SAP SE or an SAP affiliate company and devops-docker-neo-cli contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/devops-docker-neo-cli).
