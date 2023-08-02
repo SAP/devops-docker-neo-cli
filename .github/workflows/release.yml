@@ -28,9 +28,12 @@ jobs:
           echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
           echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ secrets.CR_USER }} --password-stdin
           docker build -t ppiper/neo-cli:${{ env.PIPER_version }} .
-          docker tag ppiper/neo-cli:${{ env.PIPER_version }} ghcr.io/sap/ppiper-neo-cli:${{ env.PIPER_version }}
+          docker tag ppiper/neo-cli:${{ env.PIPER_version }} ppiper/neo-cli:latest
+          docker tag ghcr.io/sap/ppiper-neo-cli:${{ env.PIPER_version }} ghcr.io/sap/ppiper-neo-cli:latest
           docker push ppiper/neo-cli:${{ env.PIPER_version }}
+          docker push ppiper/neo-cli:latest
           docker push ghcr.io/sap/ppiper-neo-cli:${{ env.PIPER_version }}
+          docker push ghcr.io/sap/ppiper-neo-cli:latest
       - uses: SAP/project-piper-action@master
         with:
           piper-version: latest
