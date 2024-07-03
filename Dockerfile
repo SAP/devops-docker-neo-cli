@@ -1,4 +1,4 @@
-FROM maven:3.5-jdk-8-alpine
+FROM maven:3.6-jdk-8-alpine
 
 LABEL org.opencontainers.image.source=https://github.com/SAP/devops-docker-neo-cli
 LABEL org.opencontainers.image.description="An image for the SAP neo cli"
