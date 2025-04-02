@@ -2,7 +2,7 @@ name: Create new Release
 
 on:
   repository_dispatch:
-    types: perform-release
+    types: [perform-release]
   workflow_dispatch:
 
 jobs:
