@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.source=https://github.com/SAP/devops-docker-neo-c
 LABEL org.opencontainers.image.description="An image for the SAP neo cli"
 LABEL org.opencontainers.image.licenses=Apache-2.0
 
-ARG NEO_SDK_VERSION=1.120.2
+ARG NEO_SDK_VERSION=1.196.6
 
 RUN  apk add --no-cache bash && \
      mvn --batch-mode com.sap.cloud:neo-javaee7-wp-maven-plugin:${NEO_SDK_VERSION}:install-sdk -DsdkInstallPath=sdk -Dincludes=tools/**,license/**,sdk.version && \
