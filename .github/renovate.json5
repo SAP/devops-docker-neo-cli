@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    'helpers:pinGitHubActionDigests'
+  ],
+  "reviewers": ["o-liver", "srinikitha09", "kaylinche"],
+  "dockerfile": {
+    "fileMatch": ["Dockerfile"],
+    "arg": {
+      "NEO_SDK_VERSION": {
+        "datasource": "maven",
+        "depName": "com.sap.cloud:neo-javaee7-wp-maven-plugin"
+      }
+    }
+  }
+}

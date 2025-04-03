@@ -2,14 +2,14 @@ name: Create new Release
 
 on:
   repository_dispatch:
-    types: perform-release
+    types: [perform-release]
   workflow_dispatch:
 
 jobs:
   create-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Prepare Release
         run: |
           CURRENT_VERSION_LONG=$(curl --silent "https://api.github.com/repos/SAP/devops-docker-neo-cli/releases" | jq -r '.[].tag_name' | head -n1)
