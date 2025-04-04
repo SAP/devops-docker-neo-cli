@@ -17,7 +17,7 @@ There are some important things to know:
 
 ## Developer Certificate of Origin (DCO)
 
-Contributors will be asked to accept a DCO before they submit the first pull request to this projects, this happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
+Contributors will be asked to accept a DCO before they submit the first pull request to these projects, this happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
 
 ## Contributing with AI-generated code
 
@@ -61,7 +61,7 @@ and its documentation shall happen within the same commit(s).
 
 #### Consistent USER Instruction in the Dockerfile
 
-Set the user name (or UID) and the user group (or GID) to UID 1000 and GID 1000 to be consistent ith the Jenkins image.
+Set the user name (or UID) and the user group (or GID) to UID 1000 and GID 1000 to be consistent with the Jenkins image.
 
 ````
 USER 1000:1000
